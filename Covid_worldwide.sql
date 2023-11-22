@@ -18,7 +18,7 @@ UPDATE sql_project.covid_worldwide
 SET `Percentage_Recovered` = (Total_Recovered / Population) * 100;
 
 
--- TO AID IN VISUALIZATION
+-- TO AID VISUALIZATION IN POWER BI 
 
 -- Comparing Total Cases vs Total Deaths showing the likelihood of dying in percentage if one contracts covid in a given country
 select Country, Total_Cases, Total_Deaths, (Total_Deaths / Total_Cases) * 100 as Death_Percentage from sql_project.covid_worldwide
@@ -35,7 +35,7 @@ order by Total_Death_Count desc ;
 select Country, Total_Recovered, Population, (Total_Recovered / Population) * 100 as Percentage_Recovered from sql_project.covid_worldwide
 order by 1, 2;
 
--- Creating views for easy visualization
+-- Creating views for easy visualization in Power BI
 create view Death_Percentage as select Country, Total_Cases, Total_Deaths, (Total_Deaths / Total_Cases) * 100 as Death_Percentage from sql_project.covid_worldwide
 order by 1, 2;
 
